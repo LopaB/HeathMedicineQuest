@@ -1,13 +1,22 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
+<%@taglib prefix="s" uri="http://www.springframework.org/tags" %>
 <html>
 <head>
 <title>Home Page</title>
-<link rel="stylesheet" href="css/bootstrap.min.css">
- <!-- jQuery library -->
-    <script src="jquery/jquery-3.1.1.min.js"></script>
 
-    <!-- Latest compiled JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+<s:url value="/resources/images" var="images"/>
+<s:url value="/resources/css" var="css"/>
+<s:url value="/resources/js" var="js"/>
+<s:url value="/resources/jquery" var="jquery"/>
+<link rel="stylesheet" href="${css}/health.css">
+<link rel="stylesheet" href="${css}/bootstrap.min.css">
+
+<!-- Latest compiled JavaScript -->
+<script src="${js}/bootstrap.min.js"></script>
+
+ <!-- jQuery library -->
+    <script src="${jquery}/jquery-3.1.1.min.js"></script>
+   
     <style>
     	body {
   padding-bottom: 40px;
@@ -55,6 +64,9 @@
     </style>
 </head>
 <body>
+<div class="wrapper">
+<div class="header">
+<!-- Menu bar -->
 <nav class="navbar navbar-default" role="navigation">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -65,15 +77,16 @@
         </div>
         <div class="collapse navbar-collapse" style="color:white;">
             <ul class="nav navbar-nav navbar-left">                
-                <li style="border-right:1px solid black"><img src="images/Logo.jpg" height="50" width="60" style="float:left;"/><a class="navbar-brand" href="#" style="padding-left:5px">Health Medicine Quest</a></li>
+                <li style="border-right:1px solid black"><img src="${images}/Logo.jpg" height="50" width="60" style="float:left;"/><a class="navbar-brand" href="#" style="padding-left:5px">Health Medicine Quest</a></li>
                 <li  class="active"><a href="#"><span class="glyphicon glyphicon-home" style="font-size:12pt;"></span> Home</a></li>
-                <li><a href="Contact.jsp"><span class="	glyphicon glyphicon-earphone" style="font-size:12pt;"></span> Contact Us</a></li>
-                <li><a href="About.jsp"><span class="glyphicon glyphicon-info-sign" style="font-size:12pt;"></span> About Us</a></li>
+                <li><a href="contact.jsp"><span class="	glyphicon glyphicon-earphone" style="font-size:12pt;"></span> Contact Us</a></li>
+                <li><a href="about.jsp"><span class="glyphicon glyphicon-info-sign" style="font-size:12pt;"></span> About Us</a></li>
+                <li><a href="${pageContext.request.contextPath}/allproducts"><span class="glyphicon glyphicon-list" style="font-size:12pt;"></span> View All Products</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="Login.jsp"><span class="glyphicon glyphicon-lock" style="font-size:12pt;"></span> SignIn</a></li>
-                <li><a href="Logout.jsp"><span class="glyphicon glyphicon-log-out" style="font-size:12pt;"></span> SignOut</a></li>
-                <li><a href="Register.jsp"><span class="glyphicon glyphicon-user" style="font-size:12pt;"></span> Register</a></li>
+                <li><a href="${pageContext.request.contextPath}/login"><span class="glyphicon glyphicon-lock" style="font-size:12pt;"></span> SignIn</a></li>
+                <li><a href="logout.jsp"><span class="glyphicon glyphicon-log-out" style="font-size:12pt;"></span> SignOut</a></li>
+                <li><a href="${pageContext.request.contextPath}/register"><span class="glyphicon glyphicon-user" style="font-size:12pt;"></span> Register</a></li>
                 <li class="dropdown" style="padding-right:10pt">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog" style="font-size:12pt;"></span><strong class="caret"></strong></a>
                     <ul class="dropdown-menu">
@@ -87,7 +100,9 @@
     </nav>
     <!-- Carousel
     ================================================== -->
-    <div class="container">
+    </div>
+    
+    <div class="container content">
         <div class="row" style="border-radius: 50px;">
             <div class="col-md-12" style="border-radius: 50px;">
 
@@ -102,18 +117,18 @@
                     </ol>
                     <div class="carousel-inner" role="listbox">
                         <div class="item">
-                            <img class="first-slide" src="images/1.jpg" alt="First slide" style="border-radius: 25px; overflow: hidden;">
+                            <img class="first-slide" src="${images}/1.jpg" alt="First slide" style="border-radius: 25px; overflow: hidden;">
                         </div>
                         <div class="item">
-                            <img class="second-slide" src="images/2.jpg" alt="Second slide" style="border-radius: 25px; overflow: hidden;">
+                            <img class="second-slide" src="${images}/2.jpg" alt="Second slide" style="border-radius: 25px; overflow: hidden;">
                             
                         </div>
                         <div class="item ">
-                            <img class="third-slide" src="images/3.jpg" alt="Third slide" style="border-radius: 25px; overflow: hidden;">
+                            <img class="third-slide" src="${images}/3.jpg" alt="Third slide" style="border-radius: 25px; overflow: hidden;">
                             
                         </div>
                         <div class="item active">
-                            <img class="third-slide" src="images/4.jpg" alt="Fourth slide" style="border-radius: 25px; overflow: hidden;">
+                            <img class="third-slide" src="${images}/4.jpg" alt="Fourth slide" style="border-radius: 25px; overflow: hidden;">
                             
                         </div>
                        
@@ -135,32 +150,32 @@
         <div class="col-md-3" style="text-align:center">
             
                 <div style="padding-top:10px; padding-bottom:10px; width:260px; height:150px; border-radius:15px; background-color:#337ab7; font-style:italic">
-                    <img src="images/ayurveda1.jpg" class="img-thumbnail" width="110" height="60" style="border-radius: 25px; overflow: hidden;"/>
-                    <a href="Ayurveda.jsp" style="color:white"><h2> Ayurveda</h2></a>
+                    <img src="${images}/ayurveda1.jpg" class="img-thumbnail" width="110" height="60" style="border-radius: 25px; overflow: hidden;"/>
+                    <a href="${pageContext.request.contextPath}/allproducts" style="color:white"><h2> Ayurveda</h2></a>
                 </div>
             
         </div>
         <div class="col-md-3" style="text-align:center">
            
                 <div style="padding-top:10px; padding-bottom:10px; width:260px; height:150px; border-radius:15px; background-color:#337ab7; font-style:italic">
-                    <img src="images/homeopathy.jpg" class="img-thumbnail" width="110" height="60" style="border-radius: 25px; overflow: hidden;"/>
-                    <a href="Homeopathy.jsp" style="color:white"><h2> Homeopathy</h2></a>
+                    <img src="${images}/homeopathy.jpg" class="img-thumbnail" width="110" height="60" style="border-radius: 25px; overflow: hidden;"/>
+                    <a href="${pageContext.request.contextPath}/allproducts" style="color:white"><h2> Homeopathy</h2></a>
                 </div>
             
         </div>
         <div class="col-md-3" style="text-align:center">
             
                 <div style="padding-top:10px; padding-bottom:10px; width:260px; height:150px; border-radius:15px; background-color:#337ab7; font-style:italic">
-                    <img src="images/baby-care1.jpg" class="img-thumbnail" width="120" height="70" style="border-radius: 25px; overflow: hidden;"/>
-                    <a href="babycare.jsp" style="color:white"><h2> Baby Care</h2></a>
+                    <img src="${images}/baby-care1.jpg" class="img-thumbnail" width="120" height="70" style="border-radius: 25px; overflow: hidden;"/>
+                    <a href="${pageContext.request.contextPath}/allproducts" style="color:white"><h2> Baby Care</h2></a>
                 </div>
            
         </div>
         <div class="col-md-3" style="text-align:center">
             
                 <div style="padding-top:10px; padding-bottom:10px; width:260px; height:150px; border-radius:15px; background-color:#337ab7; font-style:italic">
-                    <img src="images/beauty-care1.jpg" class="img-thumbnail" width="110" height="60" style="border-radius: 25px; overflow: hidden;"/>
-                    <a href="beautycare.jsp" style="color:white"><h2> Beauty Care</h2></a>  
+                    <img src="${images}/beauty-care1.jpg" class="img-thumbnail" width="110" height="60" style="border-radius: 25px; overflow: hidden;"/>
+                    <a href="${pageContext.request.contextPath}/allproducts" style="color:white"><h2> Beauty Care</h2></a>  
                 </div>
            
         </div>
@@ -196,41 +211,41 @@
      <div class="row" style="background-color:white; border-radius:10px; padding-top:5px">
          <div class="brandLogos">
          <div class="col-md-2">
-             <img src="images/Dabar.jpg" class="img-thumbnail" width="100" height="80" style="border:none"/>
+             <img src="${images}/Dabar.jpg" class="img-thumbnail" width="100" height="80" style="border:none"/>
          </div>
          <div class="col-md-2">
-             <img src="images/drrec.jpg" class="img-thumbnail" width="100" height="80" style="border:none"/>
+             <img src="${images}/drrec.jpg" class="img-thumbnail" width="100" height="80" style="border:none"/>
          </div>
          <div class="col-md-2">
-             <img src="images/sbl.jpg" class="img-thumbnail" width="100" height="80" style="border:none"/>
+             <img src="${images}/sbl.jpg" class="img-thumbnail" width="100" height="80" style="border:none"/>
          </div>
          <div class="col-md-2">    
-             <img src="images/schwabe.jpg" class="img-thumbnail" width="100" height="80" style="border:none"/>
+             <img src="${images}/schwabe.jpg" class="img-thumbnail" width="100" height="80" style="border:none"/>
          </div>
          <div class="col-md-2">
-             <img src="images/zandu.jpg" class="img-thumbnail" width="100" height="80" style="border:none"/>
+             <img src="${images}/zandu.jpg" class="img-thumbnail" width="100" height="80" style="border:none"/>
          </div>
          <div class="col-md-2">    
-             <img src="images/himalaya.jpg" class="img-thumbnail" width="100" height="80" style="border:none"/>
+             <img src="${images}/himalaya.jpg" class="img-thumbnail" width="100" height="80" style="border:none"/>
          </div>
          </div>
      </div> 
   
    
-        <hr />
+       
+    </div><!-- /.container -->
+ <hr />
         <!-- FOOTER -->
-        <div class="row">
+        <div class="row footer" >
             <div class="col-md-12">
-                <footer>
-                    <center>
-                        <p class="pull-right"><a href="#">Back to top</a></p>
-                        <p>Copyright 2017 | Developed and Designed by Lopamudra</p>
-                    </center>
-                </footer>
+                        <p style="display:inline">
+                        Copyright 2017 | Developed and Designed by Lopamudra
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="#">Back to top</a>
+                        </p> 
             </div>
         </div>
-    </div><!-- /.container -->
-
 </div>
+
 </body>
 </html>

@@ -1,11 +1,18 @@
 package com.health.HealthMedicineQuest.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import com.health.HealthMedicineQuest.CategoryDAO.ICategoryDAO;
 
 @Controller
 public class HealthController {
+	
+	@Autowired
+	private ICategoryDAO categoryDAO;
 	
 	@RequestMapping(value={"/","/home","/index"})
 	public ModelAndView index(){
@@ -25,15 +32,6 @@ public class HealthController {
 	return model;
 	}
 	
-	@RequestMapping(value={"/allproducts"})
-	public ModelAndView allproducts(){
-	ModelAndView model=new ModelAndView("productDetail");
-	return model;
-	}
 	
-	@RequestMapping(value={"/product"})
-	public ModelAndView product(){
-	ModelAndView model=new ModelAndView("product");
-	return model;
-	}
+	
 }

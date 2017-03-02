@@ -11,8 +11,7 @@ import com.health.HealthMedicineQuest.CategoryDAO.ICategoryDAO;
 @Controller
 public class HealthController {
 	
-	@Autowired
-	private ICategoryDAO categoryDAO;
+	
 	
 	@RequestMapping(value={"/","/home","/index"})
 	public ModelAndView index(){

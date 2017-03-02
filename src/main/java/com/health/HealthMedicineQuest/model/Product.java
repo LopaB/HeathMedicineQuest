@@ -1,18 +1,23 @@
 package com.health.HealthMedicineQuest.model;
 
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+
+
+@Entity
 public class Product {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)//for autonumber
 	int productId;
 	String productName;
 	String productDescription;
 	int productPrice;
 	int productQuantity;
 	String imageUrl;
-	public String getImageUrl() {
-		return imageUrl;
-	}
-	public void setImageUrl(String imageUrl) {
-		this.imageUrl = imageUrl;
-	}
 	public int getProductId() {
 		return productId;
 	}
@@ -42,6 +47,12 @@ public class Product {
 	}
 	public void setProductQuantity(int productQuantity) {
 		this.productQuantity = productQuantity;
+	}
+	public String getImageUrl() {
+		return imageUrl;
+	}
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
 	}
 	public Product(int productId, String productName, String productDescription, int productPrice,
 			int productQuantity, String imageUrl) {

@@ -81,7 +81,7 @@
                 <li  class="active"><a href="#"><span class="glyphicon glyphicon-home" style="font-size:12pt;"></span> Home</a></li>
                 <li><a href="contact.jsp"><span class="	glyphicon glyphicon-earphone" style="font-size:12pt;"></span> Contact Us</a></li>
                 <li><a href="about.jsp"><span class="glyphicon glyphicon-info-sign" style="font-size:12pt;"></span> About Us</a></li>
-                <li><a href="${pageContext.request.contextPath}/allproducts"><span class="glyphicon glyphicon-list" style="font-size:12pt;"></span> View All Products</a></li>
+                <li><a href="${pageContext.request.contextPath}/products"><span class="glyphicon glyphicon-list" style="font-size:12pt;"></span> View All Products</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="${pageContext.request.contextPath}/login"><span class="glyphicon glyphicon-lock" style="font-size:12pt;"></span> SignIn</a></li>

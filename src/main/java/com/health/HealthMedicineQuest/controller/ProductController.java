@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -29,6 +30,11 @@ public class ProductController {
 	return productDAO.getAllProducts();
 	}
 	
-	
+	@RequestMapping(value={"/product"})
+	public ModelAndView product(@PathVariable("id")int id){
+	ModelAndView model=new ModelAndView("product");
+	model.addObject("list", productDAO.getProduct(id));
+	return model;
+	}
 	
 }

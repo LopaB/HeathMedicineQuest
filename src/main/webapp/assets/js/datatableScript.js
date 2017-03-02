@@ -12,11 +12,11 @@ ajax: {
         { data: 'productPrice' },
         { data: null,
             mRender: function ( data, type, row ) {
-               return '<img src="/HealthMedicineQuest/resources/images/'+ row.imageUrl +'" height="50" width="50">'; },
-       },
+               return '<img src="/HealthMedicineQuest/resources/images/'+ row.imageUrl +'" height="50" width="50">'; }
+        },
         {data: null,
              mRender: function ( data, type, row ) {
-                return '<a class="btn btn-primary" href="'+data+'">View Item</a>';}
+                return '<a class="btn btn-primary" href="/HealthMedicineQuest/show'+row.productId+'">View Item</a>';}
         },
         {data: null,
              mRender: function ( data, type, row ) {
